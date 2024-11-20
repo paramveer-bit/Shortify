@@ -43,7 +43,7 @@ export default function URLShortener() {
         })
         return
       }
-      const res = await axios.post("http://localhost:8080", {LongUrl: longUrl })
+      const res = await axios.post("https://short.paramveer.in", {LongUrl: longUrl })
       if(res.data==="Rate limit exceeded"){
         toast({
           title: "Rate Limit Exceeded",
@@ -52,7 +52,7 @@ export default function URLShortener() {
         })
         return
       }
-      setShortUrl(res.data.ShortUrl)
+      setShortUrl("https://short.paramveer.in/"+res.data.ShortUrl)
       toast({
         title: "Url Converted"
       })

@@ -10,7 +10,7 @@ services:
     networks:
       - app-network
     environment:
-      URL : mongodb+srv://coderbuddy01:Pg100904@cluster0.dpplfgk.mongodb.net/
+      URL: mongodb+srv://coderbuddy01:Pg100904@cluster0.dpplfgk.mongodb.net/
 
   frontend:
     image: "paramveer01/shortify-frontend"
