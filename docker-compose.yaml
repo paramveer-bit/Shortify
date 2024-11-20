@@ -11,7 +11,7 @@ services:
       - app-network
 
   frontend:
-    image: "shortify-frontend:latest"
+    image: "paramveer01/shortify-frontend"
     ports:
       - "3000:3000"  # Expose Next.js frontend on port 3000
     depends_on:
