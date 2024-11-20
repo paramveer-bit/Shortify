@@ -53,7 +53,7 @@ jobs:
             sudo echo "$DOCKER_COMPOSE" > docker-compose.yaml
 
             # Write .env file
-            sudo echo "URL=${{ secrets.URL }}" > .env
+            # sudo echo "URL=${{ secrets.URL }}" > .env
 
             # Pull the latest images
             sudo docker pull paramveer01/shortify-backend:latest
