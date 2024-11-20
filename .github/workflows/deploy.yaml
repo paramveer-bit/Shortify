@@ -46,15 +46,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            # Navigate to deployment directory (update path as needed)
-            # cd /path/to/deployment
-
-            # Transfer docker-compose.yaml to the EC2 instance
-            sudo echo "$DOCKER_COMPOSE" > docker-compose.yaml
-
-            # Write .env file
-            # sudo echo "URL=${{ secrets.URL }}" > .env
-
             # Pull the latest images
             sudo docker pull paramveer01/shortify-backend:latest
             sudo docker pull paramveer01/shortify-frontend:latest
