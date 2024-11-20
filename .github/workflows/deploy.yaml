@@ -50,10 +50,10 @@ jobs:
             # cd /path/to/deployment
 
             # Transfer docker-compose.yaml to the EC2 instance
-            echo "$DOCKER_COMPOSE" > docker-compose.yaml
+            sudo echo "$DOCKER_COMPOSE" > docker-compose.yaml
 
             # Write .env file
-            echo "URL=${{ secrets.URL }}" > .env
+            sudo echo "URL=${{ secrets.URL }}" > .env
 
             # Pull the latest images
             sudo docker pull paramveer01/shortify-backend:latest
