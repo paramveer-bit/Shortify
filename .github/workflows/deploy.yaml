@@ -50,7 +50,10 @@ jobs:
             cd /path/to/deployment
 
             # Transfer docker-compose.yaml to the EC2 instance
-            scp -o StrictHostKeyChecking=no -i /dev/stdin ./docker-compose.yaml ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/path/to/deployment/docker-compose.yaml
+            echo "$DOCKER_COMPOSE" > docker-compose.yaml
+
+            # Write .env file
+            echo "URL=${{ secrets.URL }}" > .env
 
             # Pull the latest images
             docker pull paramveer01/shortify-backend:latest
@@ -59,4 +62,3 @@ jobs:
             # Restart services with the updated docker-compose.yml
             docker-compose down
             docker-compose up -d
-          env : URL: ${{ secrets.URL }}
