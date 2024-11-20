@@ -33,3 +33,30 @@ jobs:
           file: ./client/Dockerfile
           push: true
           tags: paramveer01/shortify-frontend:latest
+
+      - name: Verify Docker Images
+        run: |
+          docker images
+
+      # Deploying to aws
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            # Navigate to deployment directory (update path as needed)
+            cd /path/to/deployment
+
+            # Transfer docker-compose.yaml to the EC2 instance
+            scp -o StrictHostKeyChecking=no -i /dev/stdin ./docker-compose.yaml ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/path/to/deployment/docker-compose.yaml
+
+            # Pull the latest images
+            docker pull paramveer01/shortify-backend:latest
+            docker pull paramveer01/shortify-frontend:latest
+
+            # Restart services with the updated docker-compose.yml
+            docker-compose down
+            docker-compose up -d
+          env : URL: ${{ secrets.URL }}

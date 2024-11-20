@@ -10,6 +10,8 @@ services:
       - redis
     networks:
       - app-network
+    environment:
+      - URL=${URL}
 
   frontend:
     build:

@@ -18,7 +18,7 @@ func ConnectDb(dbName string, collName string) (*mongo.Collection, error) {
 		return nil, fmt.Errorf("error loading .env file: %v", err)
 	}
 
-	mongoURL := os.Getenv("url")
+	mongoURL := os.Getenv("URL")
 	// mongoURL := connectionString
 	if mongoURL == "" {
 		return nil, fmt.Errorf("missing MongoDB URL in environment variables")
