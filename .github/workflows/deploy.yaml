@@ -47,7 +47,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Navigate to deployment directory (update path as needed)
-            cd /path/to/deployment
+            # cd /path/to/deployment
 
             # Transfer docker-compose.yaml to the EC2 instance
             echo "$DOCKER_COMPOSE" > docker-compose.yaml
