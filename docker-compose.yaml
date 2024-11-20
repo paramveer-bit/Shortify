@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    build:
-      context: ./url-shortner
+    image: "***/shortify-backend:latest"
     ports:
       - "8080:8080"  # Expose Go backend on port 8080
     depends_on:
@@ -12,8 +11,7 @@ services:
       - app-network
 
   frontend:
-    build:
-      context: ./client
+    image: "***/shortify-frontend:latest"
     ports:
       - "3000:3000"  # Expose Next.js frontend on port 3000
     depends_on:
