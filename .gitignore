@@ -46,6 +46,4 @@ coverage/
 *.test
 url-shortner/vendor/
 
-# Docker files (if not needed for version control)
-docker-compose.yml
-Dockerfile
+
