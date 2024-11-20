@@ -56,9 +56,9 @@ jobs:
             echo "URL=${{ secrets.URL }}" > .env
 
             # Pull the latest images
-            docker pull paramveer01/shortify-backend:latest
-            docker pull paramveer01/shortify-frontend:latest
+            sudo docker pull paramveer01/shortify-backend:latest
+            sudo docker pull paramveer01/shortify-frontend:latest
 
             # Restart services with the updated docker-compose.yml
-            docker-compose down
-            docker-compose up -d
+            sudo docker-compose down
+            sudo docker-compose up -d
