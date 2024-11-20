@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently  \"cd ./url-shortner && go run main.go\" \"cd ./client && npm run dev\"",
-    "installing" : "cd ./url-shortner && go mod tidy && cd ../client && npm install && cd ..",
-    "build" : "cd ./url-shortner && go run main.go && cd ../client && npm run build && cd .."
+    "installing": "cd ./url-shortner && go mod tidy && cd ../client && npm install && cd ..",
+    "build": "cd ./url-shortner && go run main.go && cd ../client && npm run build && cd .."
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
   "description": "",
   "devDependencies": {
     "concurrently": "^9.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
   }
 }
