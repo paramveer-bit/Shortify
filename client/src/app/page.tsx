@@ -11,7 +11,7 @@ import axios from "axios"
 import { useToast } from "@/hooks/use-toast"
 
 function isValidURL(url: string) {
-  const pattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+  const pattern = /^https:\/\/.+/;
   return pattern.test(url);
 }
 
